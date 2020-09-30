@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Modulo 4 - Prueba 2</title>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <nav class="level">
+                <p class="title level-item has-text-centered">
+                    Modulo 4. VueJS. Prueba 2. Componentes.
+                </p>
+            </nav>
+            <hr>
+            <div class="flex-container">
+                <div class="item">
+                    <input type="checkbox" v-model="input_bienvenida" @change="reset_input_todos()">
+                    <span>Bienvenida</span>
+                </div>
+                <div class="item">
+                    <input type="checkbox" v-model="input_propuesta" @change="reset_input_todos()">
+                    <span>Propuesta</span>
+                </div>
+                <div class="item">
+                    <input type="checkbox" v-model="input_que_vendemos" @change="reset_input_todos()">
+                    <span>Que Vendemos</span>
+                </div>  
+                <div class="item">
+                    <input type="checkbox" v-model="input_quienes_somos" @change="reset_input_todos()">
+                    <span>Quienes somos</span>
+                </div>
+                <div class="item">    
+                    <input type="checkbox" v-model="input_todos" @change="mostrar_todos">
+                    <span>Todos</span>
+                </div>
+            </div>
+            <hr>
+            <div>
+                <bienvenida v-show="input_bienvenida"></bienvenida>
+                <propuesta v-show="input_propuesta"></propuesta>
+                <quevendemos v-show="input_que_vendemos"></quevendemos>
+                <quienessomos v-show="input_quienes_somos"></quienessomos>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/script.js" type="module"></script>
+</html>
